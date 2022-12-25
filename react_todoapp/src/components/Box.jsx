@@ -1,8 +1,14 @@
 import React from 'react'
 
-function Box() {
+function Box({ box }) {
   return (
-    <div style={{ position:"absolute", width:200, height:200, backgroundColor:'lightcyan', margin:"20px 0", left:"30%"}}>Box</div>
+    <>
+    <div style={{ position: "absolute", margin: "20px 0"}}>
+      {box.map((item) => {
+        return <div style={{ border: "2px solid red", width: `${item.width}px`, height: `${item.height}px`, margin:"20px"}}></div>
+      })}
+    </div>
+        </>
   )
 }
 

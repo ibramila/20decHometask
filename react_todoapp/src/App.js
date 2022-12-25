@@ -4,7 +4,7 @@ import Form from "./components/Form";
 import Box from "./components/Box";
 
 function App() {
-
+  const [box, setBox] = useState([])
   const [newItem, setNewItem] = useState("");
   const [items, setItems] = useState([]);
   // const [checked, setChecked] = useState(true);
@@ -31,6 +31,8 @@ function App() {
     const newArray = items.filter(item => item.id !== id);
     setItems(newArray);
   }
+
+
   return (
     <>
       <div className="div">
@@ -58,17 +60,17 @@ function App() {
           </ul>
 
         </div>
-        
-      </div>
+
+      </div >
       <div className='empty'>
         =============================== <br />
         ===============================<br />
         ===============================<br />
       </div>
-      <div className='task2'>
-        <h1>TASK IN CLASS</h1>
-        <Form />
-        <Box />
+      <div div className='task2' >
+        <h1>Box - width height Task</h1>
+        <Form box={box} setBox={setBox} />
+        <Box box={box} />
       </div>
     </>
 
